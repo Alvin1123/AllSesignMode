@@ -7,7 +7,7 @@ namespace AllDesignMode
     /// <summary>
     /// 单例设计模式
     /// </summary>
-    class SingletonPatttern
+    class SingletonPattern
     {
         /*
          *单例设计模式思想：保证该类有且只能创建一个实例对象。 
@@ -26,7 +26,7 @@ namespace AllDesignMode
         /// 私有封装，避免代码Instance=null 后创建新的实例对象 
         /// 静态，静态与非静态思想，非静态要在类被实例化后使用，但构造方法已被私有化，不可能先实例化再使用了，且多线程访问的是同一对象。
         /// </summary>
-        private static   SingletonPatttern instance;
+        private static SingletonPattern instance;
 
         /// <summary>
         /// 锁机制对象
@@ -36,7 +36,7 @@ namespace AllDesignMode
         /// <summary>
         /// 私有构造方法：目的，不让别代码随意实例化此类，保证实例单一的前提
         /// </summary>
-        private SingletonPatttern()
+        private SingletonPattern()
         {
             
         }
@@ -49,13 +49,13 @@ namespace AllDesignMode
         /// 
         /// </summary>
         /// <returns></returns>
-        public static SingletonPatttern GetInstance()
+        public static SingletonPattern GetInstance()
         {
             if (instance == null)             //如果不是从性能方面考虑，这行代码是多余的。
                 lock (lockInstance)
                 {
                     if (instance == null)
-                        instance = new SingletonPatttern();
+                        instance = new SingletonPattern();
                 }
             return instance;
         }

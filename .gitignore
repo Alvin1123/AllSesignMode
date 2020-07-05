@@ -1,0 +1,6 @@
+.history
+.vscode
+obj/Debug/netcoreapp3.1/AllDesignMode.assets.cache
+bin
+obj
+.cache
